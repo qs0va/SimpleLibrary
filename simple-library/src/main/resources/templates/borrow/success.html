@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+    <head>
+        <title>Success</title>
+    <p><a href="/clients">Go to clients</a></p>
+    <p><a href="/books">Go to books</a></p>
+</head>
+<body>
+    <h1>Book #<span th:text="${bookId}"/> was successfully borrowed by client #<span th:text="${clientId}"/></h1>
+<hr/>
+</body>
+</html>

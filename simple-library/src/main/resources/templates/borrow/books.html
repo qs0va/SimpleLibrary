@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+    <head>
+        <title>Books to borrow</title>
+    <a href="/clients">Go to clients</a>
+</head>
+<body>
+    <h1>Choose a book to borrow for client #<span th:text="${clientId}"/></h1>
+    <hr/>
+    <div th:each="book : ${allBooks}">
+        <p>#<span th:text="${book.getId()}"/>: <span th:text="${book.getName()}"/> by <span th:text="${book.getAuthor()}"/>, ISBN: <span th:text="${book.getCode()}"/>
+        <form th:method="POST" th:action="@{/borrow}">
+            <input type="hidden" th:value="${clientId}" name="clientId"/>
+            <input type="hidden" th:value="${book.getId()}" name="bookId"/>
+            <input type="submit" value="Choose"/>
+        </form>
+        </p>
+        <br/>
+    </div>
+<hr/>
+</body>
+</html>

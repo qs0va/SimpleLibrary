@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+    <head>
+        <title>New client</title>
+        <a href="/clients">Go to clients</a>
+    </head>
+    <body>
+        <h1>New client</h1>
+        <hr/>
+        <form th:method="POST" th:action="@{/clients}" th:object="${client}">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" th:field="*{name}" id="name"/>
+
+                <br/>
+
+                <label for="birthDate">BirthDate</label>
+                <input type="date" th:field="*{birthDate}" id="birthDate"/>
+
+                <br/>
+
+                <input type="submit" value="Create">
+            </div>
+        </form>
+    </body>
+</html>

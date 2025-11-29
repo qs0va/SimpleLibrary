@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+    <head>
+        <title>Edit client</title>
+        <a href="/clients">Go to clients</a>
+    </head>
+    <body>
+        <h1>Edit client</h1>
+        <hr/>
+        <form th:method="POST" th:action="@{/clients/{id}/edit(id=${client.getId()})}" th:object="${client}">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" th:field="*{name}" id="name"/>
+
+                <br/>
+
+                <label for="birthDate">BirthDate</label>
+                <input type="date" th:field="*{birthDate}" id="birthDate"/>
+
+                <br/>
+
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </body>
+</html>
